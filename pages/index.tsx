@@ -1,8 +1,9 @@
 import Head from 'next/head'
 import { InferGetStaticPropsType } from 'next'
+import Link from 'next/link'
 import styled from '@emotion/styled'
 import styles from '../styles/Home.module.css'
-import { types } from 'util'
+// import { types } from 'util'
 
 const Container = styled.div``
 const Main = styled.main``
@@ -41,11 +42,16 @@ export default function Home({
 
       <Main className={styles.main}>
         <BlogTitle className={styles.title}>{title}</BlogTitle>
+        <Link href="/about">
+          <a>About this blog</a>
+        </Link>
         <List>
-          {posts.map((posts) => (
-            <ListItem key={posts.id}>
-              <PostTitle>{posts.title}</PostTitle>
-            </ListItem>
+          {posts.map((post) => (
+            <Link key={post.id} href="/posts/[id]" as={`posts/${post.id}`}>
+              <ListItem>
+                <PostTitle>{post.title}</PostTitle>
+              </ListItem>
+            </Link>
           ))}
         </List>
       </Main>
