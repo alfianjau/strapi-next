@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import { InferGetStaticPropsType } from 'next'
 import Link from 'next/link'
-import FeedBackForm from '@components/FeedBackForm'
+import { FeedbackForm } from '@components/FeedBackForm'
 import styled from '@emotion/styled'
 import styles from '../styles/Home.module.css'
 // import { types } from 'util'
@@ -55,7 +55,7 @@ export default function Home({
             </Link>
           ))}
         </List>
-        <FeedBackForm />
+        <FeedbackForm />
       </Main>
 
       <footer className={styles.footer}>

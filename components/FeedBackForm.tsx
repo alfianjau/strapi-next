@@ -23,4 +23,4 @@ function FeedbackForm() {
   )
 }
 
-export default { FeedbackForm }
+export { FeedbackForm }
